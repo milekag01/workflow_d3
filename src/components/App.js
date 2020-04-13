@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent */
 import React from "react";
 
 class App extends React.Component {

@@ -1,11 +1,12 @@
 import { combineReducers } from "redux";
-
-const testReducer = () => {
-    return {
-        name: "testReducer",
-    };
-};
+import authReducer from "./authReducer";
+import userReducer from "./userReducer";
+import clientReducer from "./clientReducer";
+import projectReducer from "./projectReducer";
 
 export default combineReducers({
-    testReducer: testReducer,
+    authReducer: authReducer,
+    userReducer: userReducer,
+    clientReducer: clientReducer,
+    projectReducer: projectReducer,
 });
