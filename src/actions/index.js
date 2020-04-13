@@ -35,10 +35,10 @@ const headerConfig = {
 export const loginUser = (formValues) => async (dispatch) => {
     const response = await workflow.post("/users/login", formValues);
 
-    localStorage.setItem("token", response.token);
+    localStorage.setItem("token", response.data.token);
     dispatch({
         type: LOGIN_USER,
-        payload: response.user,
+        payload: response.data.user,
     });
     history.push("/dashboard");
 };
@@ -71,7 +71,7 @@ export const createUser = (formValues) => async (dispatch) => {
 
     dispatch({
         type: CREATE_USER,
-        payload: response,
+        payload: response.data,
     });
     history.push("/login");
 };
@@ -81,7 +81,7 @@ export const readUser = () => async (dispatch) => {
 
     dispatch({
         type: READ_USER,
-        payload: response,
+        payload: response.data,
     });
     history.push("/profile");
 };
@@ -95,7 +95,7 @@ export const editUser = (formValues) => async (dispatch) => {
 
     dispatch({
         type: EDIT_USER,
-        payload: response,
+        payload: response.data,
     });
     history.push("/profile");
 };
@@ -105,7 +105,7 @@ export const deleteUser = () => async (dispatch) => {
 
     dispatch({
         type: DELETE_USER,
-        payload: response,
+        payload: response.data._id,
     });
     history.push("/");
 };
@@ -117,7 +117,7 @@ export const createClient = (formValues) => async (dispatch) => {
 
     dispatch({
         type: CREATE_CLIENT,
-        payload: response,
+        payload: response.data,
     });
     history.push("/clients");
 };
@@ -127,7 +127,7 @@ export const readClient = (id) => async (dispatch) => {
 
     dispatch({
         type: READ_CLIENT,
-        payload: response,
+        payload: response.data,
     });
     // history.push("/profile");
 };
@@ -137,7 +137,7 @@ export const listClients = () => async (dispatch) => {
 
     dispatch({
         type: LIST_CLIENTS,
-        payload: response,
+        payload: response.data,
     });
     // history.push("/profile");
 };
@@ -151,7 +151,7 @@ export const editClient = (id, formValues) => async (dispatch) => {
 
     dispatch({
         type: EDIT_CLIENT,
-        payload: response,
+        payload: response.data,
     });
     history.push("/clients");
 };
@@ -161,7 +161,7 @@ export const deleteClient = (id) => async (dispatch) => {
 
     dispatch({
         type: DELETE_CLIENT,
-        payload: response,
+        payload: response.data._id,
     });
     history.push("/clients");
 };
@@ -175,7 +175,7 @@ export const AddClientOwner = (id, formValue) => async (dispatch) => {
 
     dispatch({
         type: ADD_CLIENT_OWNER,
-        payload: response,
+        payload: response.data,
     });
     history.push(`/clients/${id}`);
 };
@@ -189,7 +189,7 @@ export const RemoveClientOwner = (id, formValue) => async (dispatch) => {
 
     dispatch({
         type: REMOVE_CLIENT_OWNER,
-        payload: response,
+        payload: response.data,
     });
     history.push(`/clients/${id}`);
 };
@@ -205,7 +205,7 @@ export const createProject = (id, formValues) => async (dispatch) => {
 
     dispatch({
         type: CREATE_PROJECT,
-        payload: response,
+        payload: response.data,
     });
     history.push(`/clients/${id}`);
 };
@@ -218,7 +218,7 @@ export const readProject = (pid) => async (dispatch) => {
 
     dispatch({
         type: READ_PROJECT,
-        payload: response,
+        payload: response.data,
     });
     // history.push("/profile");
 };
@@ -231,7 +231,7 @@ export const listProjects = (cid) => async (dispatch) => {
 
     dispatch({
         type: LIST_PROJECTS,
-        payload: response,
+        payload: response.data,
     });
     // history.push("/profile");
 };
@@ -245,7 +245,7 @@ export const editProject = (pid, formValues) => async (dispatch) => {
 
     dispatch({
         type: EDIT_PROJECT,
-        payload: response,
+        payload: response.data,
     });
     history.push("/projects");
 };
@@ -258,7 +258,7 @@ export const deleteProject = (cid, pid) => async (dispatch) => {
 
     dispatch({
         type: DELETE_PROJECT,
-        payload: response,
+        payload: response.data._id,
     });
     history.push("/projects");
 };
