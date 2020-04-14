@@ -6,7 +6,6 @@ export default class Header extends Component {
         return (
             <div>
                 <div id='sheet' className='animated' />
-
                 <div id='pop-up-prompt' className='animated'>
                     <header>
                         <h3 className='color-badge' />

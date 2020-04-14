@@ -1,27 +1,23 @@
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-indent */
 import React, { Component } from "react";
-
+import {Link} from "react-router-dom";
 export default class Sidenav extends Component {
     render() {
         return (
             <div>
                 <div className='side-nav'>
                     <div className='user-section'>
-                        <a href='./profile.html'>
+                        <Link to='/profile'>
                             <img
                                 className='circle'
                                 src='http://www.gravatar.com/avatar/7ce728ca75993398f9f55da26096f26f?s=80&amp;d=mm&amp;r=g'
                             />
                             <p>milek</p>
-                        </a>
+                        </Link>
                     </div>
 
-                    <form
-                        method='GET'
-                        action='http://localhost:3000/search'
-                        acceptCharset='UTF-8'
-                    >
+                    <form>
                         <div className='form-group search'>
                             <input
                                 className='form-control search-bar'
@@ -33,18 +29,18 @@ export default class Sidenav extends Component {
                     </form>
 
                     <div className='menu'>
-                        <a className='false active' href='./hud.html'>
+                        <Link to='/hud' className='false active'>
                             <i className='icon ion-ios-home' /> Hud
-                        </a>
-                        <a className='false' href='./client.html'>
+                        </Link>
+                        <Link to='/clients' className='false'>
                             <i className='icon ion-person' /> Clients
-                        </a>
-                        <a className='false' href='./profile.html'>
+                        </Link>
+                        <Link to='/profile' className='false'>
                             <i className='icon ion-gear-b' /> Settings
-                        </a>
-                        <a href='http://localhost:3000/logout'>
+                        </Link>
+                        <Link to='/signout'>
                             <i className='icon ion-android-exit' /> Logout
-                        </a>
+                        </Link>
                     </div>
 
                     <div className='line'>
@@ -54,8 +50,6 @@ export default class Sidenav extends Component {
                     <div className='footer'>
                         <p>COPYRIGHT 2020 &copy; Milek Agrawal</p>
                     </div>
-
-                    {/* <script src="./assets/js/main.js"></script> */}
                 </div>
             </div>
         );

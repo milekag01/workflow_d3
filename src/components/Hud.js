@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent */
 import React, { Component } from "react";
 import ContentArea from "./ContentArea";
 import InfoCard from "./InfoCard";
@@ -9,15 +10,15 @@ export default class Hud extends Component {
         return (
             <div>
                 <ContentArea>
-                    <div class="row">
-                        <div class="col-xs-12 page-title-section">
-                            <h1 class="pull-left">Hud</h1>
+                    <div className='row'>
+                        <div className='col-xs-12 page-title-section'>
+                            <h1 className='pull-left'>Hud</h1>
                         </div>
                     </div>
-                    <div className="row" id="hud">
-                        <InfoCard />
-                        <InfoCard />
-                        <InfoCard />
+                    <div className='row' id='hud'>
+                        <InfoCard title='Clients' count={21} />
+                        <InfoCard title='Projects' count={27} />
+                        <InfoCard title='Tasks' count={342} />
                         <MyProjectHud />
                         <InvitedProjectHud />
                     </div>

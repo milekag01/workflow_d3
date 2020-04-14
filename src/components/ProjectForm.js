@@ -1,6 +1,22 @@
 import React, { Component } from "react";
 
 export default class ProjectForm extends Component {
+
+    const renderMsg = () => {
+        // if creation || updation fails
+        if(!this.props.project) {
+            return (
+                <span class="status-msg error-msg">
+                    {this.props.project.msg.failure}
+                </span>
+            )
+        }
+        return (
+            <span class="status-msg success-msg">
+                { this.props.project.msg.success }
+            </span>
+        )
+    }
     render() {
         return (
         <div>
@@ -15,16 +31,7 @@ export default class ProjectForm extends Component {
                 </header>
                 <section>
                     <form>
-                        <span
-                            v-if="msg.success != null"
-                            class="status-msg success-msg"
-                            >{{ msg.success }}</span
-                        >
-                        <span
-                            v-if="msg.error != null"
-                            class="status-msg error-msg"
-                            >{{ msg.error }}</span
-                        >
+                        {this.renderMsg()}
                         <input
                             v-model="newProject.name"
                             placeholder="Name"
@@ -34,11 +41,7 @@ export default class ProjectForm extends Component {
                     </form>
                 </section>
                 <footer>
-                    <a
-                        v-on:click="createProject(true)"
-                        class="btn btn-primary pull-right"
-                        >Save</a
-                    >
+                    <a class="btn btn-primary pull-right">Save</a>
                     <div class="clearfix"></div>
                 </footer>
             </div>

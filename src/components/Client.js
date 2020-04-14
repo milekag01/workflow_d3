@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 import ContentArea from "./ContentArea";
 import Header from "./Header";
 import Sidenav from "./Sidenav";
@@ -7,6 +8,7 @@ export default class Client extends Component {
     render() {
         return (
             <div>
+                <Header/>
                 <Sidenav />
 
                 <ContentArea>
