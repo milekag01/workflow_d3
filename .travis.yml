@@ -1,10 +1,10 @@
 language: node_js
 node_js:
   - "node"
-cache: yarn install
+cache: npm install
 script:
-  - yarn run lint
-  - yarn run build
+  - npm run lint
+  - npm run build
 deploy:
   provider: pages
   skip-cleanup: true
