@@ -1,9 +1,10 @@
+/* eslint-disable quotes */
 import _ from "lodash";
 
-import CREATE_USER from "..actions/types";
-import READ_USER from "..actions/types";
-import EDIT_USER from "..actions/types";
-import DELETE_USER from "..actions/types";
+import { CREATE_USER } from '../actions/types';
+import { READ_USER } from '../actions/types';
+import { EDIT_USER } from '../actions/types';
+import { DELETE_USER } from '../actions/types';
 
 export default (state = {}, action) => {
     switch (action.type) {

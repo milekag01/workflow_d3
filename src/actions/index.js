@@ -1,28 +1,29 @@
-import workflow from "../apis/workflow";
-import history from "../history";
+/* eslint-disable quotes */
+import workflow from '../apis/workflow';
+import history from '../history';
 
-import LOGIN_USER from "./types";
-import LOGOUT_USER from "./types";
-// import LOGOUT_USER_ALL from "./types";
+import { LOGIN_USER } from './types';
+import { LOGOUT_USER } from './types';
+// import {LOGOUT_USER_ALL} from './types';
 
-import CREATE_USER from "./types";
-import READ_USER from "./types";
-import EDIT_USER from "./types";
-import DELETE_USER from "./types";
+import { CREATE_USER } from './types';
+import { READ_USER } from './types';
+import { EDIT_USER } from './types';
+import { DELETE_USER } from './types';
 
-import CREATE_CLIENT from "./types";
-import READ_CLIENT from "./types";
-import LIST_CLIENTS from "./types";
-import EDIT_CLIENT from "./types";
-import DELETE_CLIENT from "./types";
-import ADD_CLIENT_OWNER from "./types";
-import REMOVE_CLIENT_OWNER from "./types";
+import { CREATE_CLIENT } from './types';
+import { READ_CLIENT } from './types';
+import { LIST_CLIENTS } from './types';
+import { EDIT_CLIENT } from './types';
+import { DELETE_CLIENT } from './types';
+import { ADD_CLIENT_OWNER } from './types';
+import { REMOVE_CLIENT_OWNER } from './types';
 
-import CREATE_PROJECT from "./types";
-import READ_PROJECT from "./types";
-import LIST_PROJECTS from "./types";
-import EDIT_PROJECT from "./types";
-import DELETE_PROJECT from "./types";
+import { CREATE_PROJECT } from './types';
+import { READ_PROJECT } from './types';
+import { LIST_PROJECTS } from './types';
+import { EDIT_PROJECT } from './types';
+import { DELETE_PROJECT } from './types';
 
 // const token = "sampleToken123";
 const token = localStorage.getItem("token");
